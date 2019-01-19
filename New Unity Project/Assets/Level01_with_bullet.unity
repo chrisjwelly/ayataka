@@ -510,7 +510,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bullet Chances Left
+  m_Text: How many more bullets can you take?
 --- !u!222 &221262408
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1864,6 +1864,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5853986768848151020, guid: 825ad50df3d1d5346bd16d9618d3d244, type: 3}
   obstacleInfo: {fileID: 1629552486}
+  playerInfo: {fileID: 45452540}
+  distanceBetween: 5
   bulletForce: 3000
 --- !u!1001 &1642091105
 PrefabInstance:
@@ -3068,7 +3070,7 @@ PrefabInstance:
     - target: {fileID: 7916849999164053280, guid: 469c535e20d481241b6f02c44b08d4b6,
         type: 3}
       propertyPath: forwardForce
-      value: 1000
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 7916849999164053283, guid: 469c535e20d481241b6f02c44b08d4b6,
         type: 3}

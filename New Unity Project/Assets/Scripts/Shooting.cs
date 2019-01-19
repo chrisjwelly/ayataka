@@ -19,7 +19,10 @@ public class Shooting : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (obstacleInfo.position.z - playerInfo.position.z < distanceBetween)
+        float actualDistance;
+        actualDistance = obstacleInfo.position.z - playerInfo.position.z;
+        // > 0 is for when the player has moved past the obstacle
+        if (actualDistance < distanceBetween && actualDistance > 0)
         {
             /* don't use GetKey because this is for all the duration
              * that the button is pressed down. GetKeyDown will
@@ -35,6 +38,6 @@ public class Shooting : MonoBehaviour
                 Physics.IgnoreCollision(bulletInstance.GetComponent<Collider>(), GetComponent<Collider>());
             }
         }
-        Debug.Log(obstacleInfo.position.z - playerInfo.position.z); // add a string here to help you maybe
+        Debug.Log(actualDistance); // add a string here to help you maybe
     }
 }
