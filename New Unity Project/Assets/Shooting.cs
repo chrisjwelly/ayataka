@@ -12,6 +12,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public Rigidbody bullet;
+    public Transform obstacleInfo;
     void FixedUpdate()
     {
         /* don't use GetKey because this is for all the duration
@@ -21,8 +22,9 @@ public class Shooting : MonoBehaviour
          */
         if (Input.GetKeyDown("k"))
         {
+            // currently the bullet will 'collide' with the obstacle
             Rigidbody bulletInstance;
-            bulletInstance = Instantiate(bullet) as Rigidbody;
+            bulletInstance = Instantiate(bullet, obstacleInfo.position, obstacleInfo.rotation) as Rigidbody;
             bulletInstance.AddForce(0, 0, -3000);
         }
     }

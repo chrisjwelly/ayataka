@@ -356,6 +356,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5853986768848151020, guid: 825ad50df3d1d5346bd16d9618d3d244, type: 3}
+  obstacleInfo: {fileID: 1931175723}
+--- !u!4 &1931175723 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 501824772225767675, guid: 8aafb73bf4c717048a18dde24fadee83,
+    type: 3}
+  m_PrefabInstance: {fileID: 1931175716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1970866198
 GameObject:
   m_ObjectHideFlags: 0
