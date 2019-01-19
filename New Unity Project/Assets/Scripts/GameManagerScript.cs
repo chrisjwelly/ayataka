@@ -11,6 +11,7 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject completeLevelUI;
 
+
     public void CompleteLevel()
     {
         completeLevelUI.SetActive(true);

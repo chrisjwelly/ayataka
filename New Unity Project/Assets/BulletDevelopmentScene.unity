@@ -335,6 +335,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4974087656976598746, guid: 8aafb73bf4c717048a18dde24fadee83,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974087656976598746, guid: 8aafb73bf4c717048a18dde24fadee83,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aafb73bf4c717048a18dde24fadee83, type: 3}
 --- !u!1 &1931175717 stripped
@@ -357,6 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5853986768848151020, guid: 825ad50df3d1d5346bd16d9618d3d244, type: 3}
   obstacleInfo: {fileID: 1931175723}
+  bulletForce: 3000
 --- !u!4 &1931175723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 501824772225767675, guid: 8aafb73bf4c717048a18dde24fadee83,
@@ -507,6 +518,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1274936049, guid: 825ad50df3d1d5346bd16d9618d3d244, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274936046, guid: 825ad50df3d1d5346bd16d9618d3d244, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

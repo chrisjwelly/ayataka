@@ -17,6 +17,10 @@ public class PlayerCollision : MonoBehaviour
            
         }
 
+        if (collisionInfo.collider.tag == "Bullet")
+        {
+            FindObjectOfType<GameManagerScript>().EndGame();
+        }
     }
     
 
