@@ -16,7 +16,9 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetKey("k"))
         {
-            Instantiate(bullet);
+            Rigidbody bulletInstance;
+            bulletInstance = Instantiate(bullet) as Rigidbody;
+            bulletInstance.AddForce(0, 0, -3000);
         }
     }
 }
