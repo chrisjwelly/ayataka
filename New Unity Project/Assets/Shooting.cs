@@ -13,6 +13,7 @@ public class Shooting : MonoBehaviour
 {
     public Rigidbody bullet;
     public Transform obstacleInfo;
+    public float bulletForce = 3000f;
     void FixedUpdate()
     {
         /* don't use GetKey because this is for all the duration
@@ -22,10 +23,11 @@ public class Shooting : MonoBehaviour
          */
         if (Input.GetKeyDown("k"))
         {
-            // currently the bullet will 'collide' with the obstacle
             Rigidbody bulletInstance;
             bulletInstance = Instantiate(bullet, obstacleInfo.position, obstacleInfo.rotation) as Rigidbody;
-            bulletInstance.AddForce(0, 0, -3000);
+            bulletInstance.AddForce(0, 0, -bulletForce);
+            // I LOVE IGNORE COLLISION
+            Physics.IgnoreCollision(bulletInstance.GetComponent<Collider>(), GetComponent<Collider>());
         }
     }
 }
