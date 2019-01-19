@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// plan:
+/*
+ * 1. Create prefab for bullet (Done!)
+ * 2. Instantiate the bullet [from the obstacle]
+ * 3. If (get key smth smth) -> Shoot the bullet [by addForce?]
+ * 4. 
+ */
 public class Shooting : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Rigidbody bullet;
+    void FixedUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Input.GetKey("k"))
+        {
+            Instantiate(bullet);
+        }
     }
 }
