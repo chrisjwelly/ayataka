@@ -10,6 +10,14 @@ public class PlayerCollision : MonoBehaviour
             
             FindObjectOfType<GameManagerScript>().EndGame();
         }
+
+        if (collisionInfo.collider.tag == "ground")
+        {
+            FindObjectOfType<PlayerMovement>().Switch_Jump();
+           
+        }
+
     }
+    
 
 }

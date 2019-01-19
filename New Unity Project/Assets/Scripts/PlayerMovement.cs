@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody RB;
     public float forwardForce = 2000f;
     public float sidewaysForce = 50f;
-    private bool jump = true;
+    public bool jump = true;
 
     // "Fixed"update because we are using physics
     // Update is called once per frame
@@ -31,24 +31,18 @@ public class PlayerMovement : MonoBehaviour
             RB.AddForce(0, 300 * Time.deltaTime, 0, ForceMode.VelocityChange);
             jump = false;
                 }
-        float pos_y = RB.position.y;
-        void ju ()
-            {
-                jump = true;
-            }
 
-        if (jump == false && pos_y > 0.95f && pos_y < 1.05f)
-        {
-            
-
-            Invoke("ju", 0.1f);
-            
-        }
-        
-        if (pos_y < -1f)
+        if (RB.position.y < -1f)
         {
             FindObjectOfType<GameManagerScript>().EndGame();
         }
+    }
+    public void Switch_Jump()
+    {
+        if (jump == false && RB.position.x > -8.0f && RB.position.x < 8.0f)
+            {
+                jump = true;
+            }
     }
     
 }
