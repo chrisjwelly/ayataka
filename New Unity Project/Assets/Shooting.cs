@@ -14,7 +14,12 @@ public class Shooting : MonoBehaviour
     public Rigidbody bullet;
     void FixedUpdate()
     {
-        if (Input.GetKey("k"))
+        /* don't use GetKey because this is for all the duration
+         * that the button is pressed down. GetKeyDown will
+         * only return true for the single instant the button is pressed
+         * down
+         */
+        if (Input.GetKeyDown("k"))
         {
             Rigidbody bulletInstance;
             bulletInstance = Instantiate(bullet) as Rigidbody;
