@@ -108,7 +108,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 32
   m_CollisionDetection: 0
 --- !u!114 &7916849999164053280
 MonoBehaviour:
@@ -125,6 +125,7 @@ MonoBehaviour:
   RB: {fileID: 7916849999164053283}
   forwardForce: 2000
   sidewaysForce: 50
+  jump: 1
 --- !u!114 &7916849999164053281
 MonoBehaviour:
   m_ObjectHideFlags: 0

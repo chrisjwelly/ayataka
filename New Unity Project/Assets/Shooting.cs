@@ -30,13 +30,14 @@ public class Shooting : MonoBehaviour
              * only return true for the single instant the button is pressed
              * down
              */
-            if (Input.GetKeyDown("k"))
+            if (Input.GetKeyDown("/"))
             {
                 Rigidbody bulletInstance;
                 bulletInstance = Instantiate(bullet, obstacleInfo.position, obstacleInfo.rotation) as Rigidbody;
                 bulletInstance.AddForce(0, 0, -bulletForce);
                 // I LOVE IGNORE COLLISION
                 Physics.IgnoreCollision(bulletInstance.GetComponent<Collider>(), GetComponent<Collider>());
+
             }
         }
         Debug.Log(actualDistance); // add a string here to help you maybe
