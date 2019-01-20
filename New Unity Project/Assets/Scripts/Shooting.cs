@@ -14,7 +14,8 @@ public class Shooting : MonoBehaviour
     public Rigidbody bullet;
     public Transform obstacleInfo;
     public Transform playerInfo;
-    public int distanceBetween = 50; // distance between the obstacle and the player must be lower than this value
+    // distance between the obstacle and the player must be lower than this value before shooting
+    public int distanceBetween = 50;  
     public float bulletForce = 3000f;
 
     void FixedUpdate()
