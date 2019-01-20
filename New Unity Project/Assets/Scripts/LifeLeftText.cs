@@ -7,8 +7,15 @@ public class LifeLeftText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LifeLeftNotice.text = "You can be hit by bullet " +
-                               FindObjectOfType<GameManagerScript>().lifeLeft.ToString("0")
-                               + " more time(s)";// refer to game component
+        if (FindObjectOfType<GameManagerScript>().lifeLeft > 0)
+        {
+            LifeLeftNotice.text = "You can be hit by bullet " +
+                                   FindObjectOfType<GameManagerScript>().lifeLeft.ToString("0")
+                                   + " more time(s)";// refer to game component
+        } else
+        {
+            LifeLeftNotice.text = "Uh oh you took too many bullets :(";
+        }
+
     }
 }
