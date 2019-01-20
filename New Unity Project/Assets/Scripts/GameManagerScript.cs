@@ -31,7 +31,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void GotHitByBullet()
     {
-        if (lifeLeft != 0)
+        if (lifeLeft != 1) // not != 0 because starting from after one shot you should end game alrd
         {
             lifeLeft = lifeLeft - 1;
         }

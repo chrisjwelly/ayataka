@@ -1865,7 +1865,7 @@ MonoBehaviour:
   bullet: {fileID: 5853986768848151020, guid: 825ad50df3d1d5346bd16d9618d3d244, type: 3}
   obstacleInfo: {fileID: 1629552486}
   playerInfo: {fileID: 45452540}
-  distanceBetween: 5
+  distanceBetween: 50
   bulletForce: 3000
 --- !u!1001 &1642091105
 PrefabInstance:
@@ -3070,7 +3070,7 @@ PrefabInstance:
     - target: {fileID: 7916849999164053280, guid: 469c535e20d481241b6f02c44b08d4b6,
         type: 3}
       propertyPath: forwardForce
-      value: 2500
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7916849999164053283, guid: 469c535e20d481241b6f02c44b08d4b6,
         type: 3}
