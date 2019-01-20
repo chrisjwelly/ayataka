@@ -12,19 +12,19 @@ public class GameManagerScript : MonoBehaviour
     public GameObject completeLevelUI;
 
     // problematic because you can manually change it in the editor ._.
-    public int lifeLeft = 5;
+    public int lifeLeft = 3;
 
     public void CompleteLevel()
     {
         completeLevelUI.SetActive(true);
     }
-    
+
     public void EndGame()
     {
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            movement.enabled = false; 
+            movement.enabled = false;
             Invoke("Restart", restartDelay);
         }
     }

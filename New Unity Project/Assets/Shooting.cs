@@ -13,17 +13,25 @@ public class Shooting : MonoBehaviour
 {
     public Rigidbody bullet;
     public Transform obstacleInfo;
-    public Transform playerInfo;
+    public Rigidbody OB;
+    
+    public Transform player;
     // distance between the obstacle and the player must be lower than this value before shooting
-    public int distanceBetween = 50;  
+    public float distanceBetween = 40f;
     public float bulletForce = 3000f;
-
+    public float sidewaysF = 40f;
+    public void Start()
+    {
+        player = GameObject.Find("Player").transform;
+    }
     void FixedUpdate()
     {
-        float actualDistance;
-        actualDistance = obstacleInfo.position.z - playerInfo.position.z;
+        float actualDistance = obstacleInfo.position.z - player.position.z;
+
         // > 0 is for when the player has moved past the obstacle
+
         if (actualDistance < distanceBetween && actualDistance > 0)
+
         {
             /* don't use GetKey because this is for all the duration
              * that the button is pressed down. GetKeyDown will
@@ -39,7 +47,15 @@ public class Shooting : MonoBehaviour
                 Physics.IgnoreCollision(bulletInstance.GetComponent<Collider>(), GetComponent<Collider>());
 
             }
+            if (Input.GetKey("right"))
+            {
+                OB.AddForce(sidewaysF * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            }
+            if (Input.GetKey("left"))
+            {
+                OB.AddForce(-sidewaysF * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            }
+
         }
-        Debug.Log(actualDistance); // add a string here to help you maybe
     }
 }
