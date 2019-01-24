@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class GameManagerScript : MonoBehaviour
 {
     bool gameHasEnded = false;
@@ -10,6 +10,7 @@ public class GameManagerScript : MonoBehaviour
     public PlayerMovement movement;
 
     public GameObject completeLevelUI;
+
 
     // problematic because you can manually change it in the editor ._.
     public int lifeLeft = 3;
@@ -25,11 +26,13 @@ public class GameManagerScript : MonoBehaviour
         {
             gameHasEnded = true;
             movement.enabled = false;
+            lifeLeft = 0;
             Invoke("Restart", restartDelay);
+            
         }
     }
 
-    public void GotHitByBullet()
+    public void ReduceLife()
     {
         if (lifeLeft > 1) // not != 0 because starting from after one shot you should end game alrd
         {

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 45452540}
   - component: {fileID: 1128310123}
   - component: {fileID: 1128310122}
-  - component: {fileID: 1128310121}
   - component: {fileID: 1456092090}
   - component: {fileID: 45452542}
   - component: {fileID: 1128310120}
+  - component: {fileID: 1805457482622264021}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128310119}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1128310122
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81,19 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1128310121
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128310119}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1456092090
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -107,8 +94,8 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 16
+  m_Interpolate: 1
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &45452542
 MonoBehaviour:
@@ -123,8 +110,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RB: {fileID: 1456092090}
-  forwardForce: 1500
-  sidewaysForce: 50
+  acceleration: 0.2
+  forwardForce: 2500
+  sidewaysForce: 75
+  JumpForce: 370
   jump: 1
 --- !u!114 &1128310120
 MonoBehaviour:
@@ -138,3 +127,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467a3004e284b71468fb84bc7a1b40e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &1805457482622264021
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128310119}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
